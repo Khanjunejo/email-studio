@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Smart Email Builder</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#8b5cf6">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--bg:#070916;--tx:#eef0ff;--mu:#9aa3cf;--card:rgba(255,255,255,.06);--bd:rgba(255,255,255,.12);--in:rgba(255,255,255,.07);--a:#8b5cf6;--b:#06b6d4;--c:#f472b6;--paper:#fff;--ptx:#1c1e33}
 [data-t=light]{--bg:#f1f0ff;--tx:#1c1e33;--mu:#5e6490;--card:rgba(255,255,255,.72);--bd:rgba(90,80,170,.18);--in:rgba(255,255,255,.95)}
@@ -325,6 +329,7 @@ function th(){const d=document.documentElement;d.dataset.t=d.dataset.t==='light'
 $('ul').onchange=ui;$('el').onchange=()=>{$('sl').value=$('el').value;gv()};
 document.documentElement.dataset.t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';
 ui();gv();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>
 </html>
